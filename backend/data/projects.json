@@ -1,0 +1,1346 @@
+{
+  "projects": [
+    {
+      "id": "781f59b1-c87a-4444-99f1-b5489d5e0b63",
+      "name": "Todo API",
+      "description": "A simple todo API with tasks and categories",
+      "schema": {
+        "entities": [
+          {
+            "name": "Task",
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "completed",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "dueDate",
+                "type": "date",
+                "required": false
+              },
+              {
+                "name": "categoryId",
+                "type": "string",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Category",
+            "fields": [
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "color",
+                "type": "string",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": false,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/tasks",
+          "description": "Get all tasks"
+        },
+        {
+          "method": "GET",
+          "path": "/api/tasks/:id",
+          "description": "Get task by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/tasks",
+          "description": "Create a new task"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/tasks/:id",
+          "description": "Update a task"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/tasks/:id",
+          "description": "Delete a task"
+        },
+        {
+          "method": "GET",
+          "path": "/api/categorys",
+          "description": "Get all categorys"
+        },
+        {
+          "method": "GET",
+          "path": "/api/categorys/:id",
+          "description": "Get category by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/categorys",
+          "description": "Create a new category"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/categorys/:id",
+          "description": "Update a category"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/categorys/:id",
+          "description": "Delete a category"
+        }
+      ],
+      "createdAt": "2025-05-21T06:41:52.759Z",
+      "updatedAt": "2025-05-21T06:41:52.780Z",
+      "hasSwagger": true
+    },
+    {
+      "id": "d3dd6f14-aac8-4e03-8a12-4d0f5b8580c6",
+      "name": "jit",
+      "description": "BASIC",
+      "schema": {
+        "entities": [
+          {
+            "name": "User",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "email",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Post",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "content",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "authorId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": false,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/users",
+          "description": "Get all users"
+        },
+        {
+          "method": "GET",
+          "path": "/api/users/:id",
+          "description": "Get user by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/users",
+          "description": "Create a new user"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/users/:id",
+          "description": "Update a user"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/:id",
+          "description": "Delete a user"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts",
+          "description": "Get all posts"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts/:id",
+          "description": "Get post by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/posts",
+          "description": "Create a new post"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/posts/:id",
+          "description": "Update a post"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/posts/:id",
+          "description": "Delete a post"
+        }
+      ],
+      "createdAt": "2025-05-21T07:00:13.625Z",
+      "updatedAt": "2025-05-21T07:00:13.650Z",
+      "hasSwagger": true
+    },
+    {
+      "id": "620f9c5e-faea-4023-a88c-c6e5d342622e",
+      "name": "my-awesome-api",
+      "description": "API for my-awesome-api",
+      "schema": {
+        "entities": [
+          {
+            "name": "User",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "email",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Post",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "content",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "authorId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": true,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/users",
+          "description": "Get all users"
+        },
+        {
+          "method": "GET",
+          "path": "/api/users/:id",
+          "description": "Get user by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/users",
+          "description": "Create a new user"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/users/:id",
+          "description": "Update a user"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/:id",
+          "description": "Delete a user"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts",
+          "description": "Get all posts"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts/:id",
+          "description": "Get post by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/posts",
+          "description": "Create a new post"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/posts/:id",
+          "description": "Update a post"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/posts/:id",
+          "description": "Delete a post"
+        }
+      ],
+      "createdAt": "2025-05-21T07:03:11.636Z",
+      "updatedAt": "2025-05-21T07:03:11.697Z",
+      "hasSwagger": true
+    },
+    {
+      "id": "5a437c46-d853-44da-a2a1-458f334a9f7e",
+      "name": "my-awesome-api",
+      "description": "API for my-awesome-api",
+      "schema": {
+        "entities": [
+          {
+            "name": "User",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "email",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "role",
+                "type": "enum('admin',",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Post",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "content",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "views",
+                "type": "int",
+                "required": false
+              },
+              {
+                "name": "authorId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Comment",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "postId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "userId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": true,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/users",
+          "description": "Get all users"
+        },
+        {
+          "method": "GET",
+          "path": "/api/users/:id",
+          "description": "Get user by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/users",
+          "description": "Create a new user"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/users/:id",
+          "description": "Update a user"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/:id",
+          "description": "Delete a user"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts",
+          "description": "Get all posts"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts/:id",
+          "description": "Get post by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/posts",
+          "description": "Create a new post"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/posts/:id",
+          "description": "Update a post"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/posts/:id",
+          "description": "Delete a post"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments",
+          "description": "Get all comments"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments/:id",
+          "description": "Get comment by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/comments",
+          "description": "Create a new comment"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/comments/:id",
+          "description": "Update a comment"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/comments/:id",
+          "description": "Delete a comment"
+        }
+      ],
+      "createdAt": "2025-05-21T07:04:09.993Z",
+      "updatedAt": "2025-05-21T07:04:10.027Z",
+      "hasSwagger": true
+    },
+    {
+      "id": "093cbfc9-ada7-4ae7-b19e-883bd772b7da",
+      "name": "my-awesome-api",
+      "description": "API for my-awesome-api",
+      "schema": {
+        "entities": [
+          {
+            "name": "User",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "email",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "role",
+                "type": "enum('admin',",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Post",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "content",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "views",
+                "type": "int",
+                "required": false
+              },
+              {
+                "name": "authorId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Comment",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "postId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "userId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": true,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/users",
+          "description": "Get all users"
+        },
+        {
+          "method": "GET",
+          "path": "/api/users/:id",
+          "description": "Get user by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/users",
+          "description": "Create a new user"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/users/:id",
+          "description": "Update a user"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/:id",
+          "description": "Delete a user"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts",
+          "description": "Get all posts"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts/:id",
+          "description": "Get post by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/posts",
+          "description": "Create a new post"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/posts/:id",
+          "description": "Update a post"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/posts/:id",
+          "description": "Delete a post"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments",
+          "description": "Get all comments"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments/:id",
+          "description": "Get comment by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/comments",
+          "description": "Create a new comment"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/comments/:id",
+          "description": "Update a comment"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/comments/:id",
+          "description": "Delete a comment"
+        }
+      ],
+      "createdAt": "2025-05-21T07:04:17.202Z",
+      "updatedAt": "2025-05-21T07:04:17.228Z",
+      "hasSwagger": true
+    },
+    {
+      "id": "48c2ff1e-b373-4159-82e8-29aea0cafeef",
+      "name": "my-awesome-api",
+      "description": "API for my-awesome-api",
+      "schema": {
+        "entities": [
+          {
+            "name": "User",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "email",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "role",
+                "type": "enum('admin',",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Post",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "content",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "views",
+                "type": "int",
+                "required": false
+              },
+              {
+                "name": "authorId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Comment",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "postId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "userId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": true,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/users",
+          "description": "Get all users"
+        },
+        {
+          "method": "GET",
+          "path": "/api/users/:id",
+          "description": "Get user by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/users",
+          "description": "Create a new user"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/users/:id",
+          "description": "Update a user"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/:id",
+          "description": "Delete a user"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts",
+          "description": "Get all posts"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts/:id",
+          "description": "Get post by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/posts",
+          "description": "Create a new post"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/posts/:id",
+          "description": "Update a post"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/posts/:id",
+          "description": "Delete a post"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments",
+          "description": "Get all comments"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments/:id",
+          "description": "Get comment by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/comments",
+          "description": "Create a new comment"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/comments/:id",
+          "description": "Update a comment"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/comments/:id",
+          "description": "Delete a comment"
+        }
+      ],
+      "createdAt": "2025-05-21T07:08:08.696Z",
+      "updatedAt": "2025-05-21T07:08:08.761Z",
+      "hasSwagger": true
+    },
+    {
+      "id": "46b185c1-23d3-4612-b1a5-0b9afb02cfdb",
+      "name": "my-awesome-api",
+      "description": "API for my-awesome-api",
+      "schema": {
+        "entities": [
+          {
+            "name": "User",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "email",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "role",
+                "type": "enum('admin',",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Post",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "content",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "views",
+                "type": "int",
+                "required": false
+              },
+              {
+                "name": "authorId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Comment",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "postId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "userId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": true,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/users",
+          "description": "Get all users"
+        },
+        {
+          "method": "GET",
+          "path": "/api/users/:id",
+          "description": "Get user by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/users",
+          "description": "Create a new user"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/users/:id",
+          "description": "Update a user"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/:id",
+          "description": "Delete a user"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts",
+          "description": "Get all posts"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts/:id",
+          "description": "Get post by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/posts",
+          "description": "Create a new post"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/posts/:id",
+          "description": "Update a post"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/posts/:id",
+          "description": "Delete a post"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments",
+          "description": "Get all comments"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments/:id",
+          "description": "Get comment by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/comments",
+          "description": "Create a new comment"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/comments/:id",
+          "description": "Update a comment"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/comments/:id",
+          "description": "Delete a comment"
+        }
+      ],
+      "createdAt": "2025-05-21T07:08:11.685Z",
+      "updatedAt": "2025-05-21T07:08:11.711Z",
+      "hasSwagger": true
+    },
+    {
+      "id": "586785df-3326-48ee-900d-57fbb951bbaf",
+      "name": "jit",
+      "description": "API for jit",
+      "schema": {
+        "entities": [
+          {
+            "name": "User",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "email",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "role",
+                "type": "enum('admin',",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Post",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "content",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "views",
+                "type": "int",
+                "required": false
+              },
+              {
+                "name": "authorId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          },
+          {
+            "name": "Comment",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "postId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "userId",
+                "type": "uuid",
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "datetime",
+                "required": false
+              }
+            ]
+          }
+        ]
+      },
+      "config": {
+        "dbType": "json",
+        "auth": false,
+        "generateSwagger": true
+      },
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/api/users",
+          "description": "Get all users"
+        },
+        {
+          "method": "GET",
+          "path": "/api/users/:id",
+          "description": "Get user by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/users",
+          "description": "Create a new user"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/users/:id",
+          "description": "Update a user"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/:id",
+          "description": "Delete a user"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts",
+          "description": "Get all posts"
+        },
+        {
+          "method": "GET",
+          "path": "/api/posts/:id",
+          "description": "Get post by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/posts",
+          "description": "Create a new post"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/posts/:id",
+          "description": "Update a post"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/posts/:id",
+          "description": "Delete a post"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments",
+          "description": "Get all comments"
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments/:id",
+          "description": "Get comment by ID"
+        },
+        {
+          "method": "POST",
+          "path": "/api/comments",
+          "description": "Create a new comment"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/comments/:id",
+          "description": "Update a comment"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/comments/:id",
+          "description": "Delete a comment"
+        }
+      ],
+      "createdAt": "2025-05-21T07:08:31.867Z",
+      "updatedAt": "2025-05-21T07:08:31.897Z",
+      "hasSwagger": true
+    }
+  ]
+}

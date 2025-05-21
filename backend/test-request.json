@@ -1,0 +1,58 @@
+{
+  "name": "Todo API",
+  "description": "A simple todo API with tasks and categories",
+  "schema": {
+    "entities": [
+      {
+        "name": "Task",
+        "fields": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "completed",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "dueDate",
+            "type": "date",
+            "required": false
+          },
+          {
+            "name": "categoryId",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "Category",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "color",
+            "type": "string",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "config": {
+    "dbType": "json",
+    "auth": false,
+    "generateSwagger": true
+  }
+} 
