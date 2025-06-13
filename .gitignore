@@ -53,3 +53,8 @@ Thumbs.db
 backend/data/projects/
 backend/data/uploads/
 *.zip
+# clerk configuration (can include secrets)
+/.clerk/
+
+# backend data
+backend/data/projects

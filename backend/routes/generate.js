@@ -88,7 +88,7 @@ router.post(
     body('schema').notEmpty().withMessage('Schema is required'),
     body('schema.entities').isArray().withMessage('Schema must include entities array')
   ],
-  generateController.generateAPI
+  generateController.generateApi
 );
 
 module.exports = router; 

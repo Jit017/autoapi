@@ -18,7 +18,6 @@ export default function Header() {
     { name: "Home", path: "/" },
     { name: "Generate API", path: "/generate" },
     { name: "Docs", path: "/docs" },
-    { name: "Dashboard", path: "/dashboard" },
   ]
 
   useEffect(() => {
@@ -71,11 +70,13 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <ModeToggle />
+          
           <Button asChild variant="outline" size="sm" className="hidden md:inline-flex">
             <Link href="https://github.com/autoapi/repo" target="_blank">
               GitHub
             </Link>
           </Button>
+          
           <Button asChild size="sm" className="hidden md:inline-flex">
             <Link href="/generate">Generate API</Link>
           </Button>
@@ -118,12 +119,14 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              
               <div className="mt-4 space-y-2">
                 <Button asChild className="w-full">
                   <Link href="/generate" onClick={() => setMobileMenuOpen(false)}>
                     Generate API
                   </Link>
                 </Button>
+                
                 <Button asChild variant="outline" className="w-full">
                   <Link href="https://github.com/autoapi/repo" target="_blank" onClick={() => setMobileMenuOpen(false)}>
                     GitHub

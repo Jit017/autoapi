@@ -22,16 +22,16 @@ const defaultSchema = `{
   "models": {
     "User": {
       "id": "uuid primaryKey",
-      "name": "string",
-      "email": "string unique",
+      "name": "string required",
+      "email": "string required",
       "createdAt": "datetime"
     },
     "Post": {
       "id": "uuid primaryKey",
-      "title": "string",
+      "title": "string required",
       "content": "text",
-      "published": "boolean default:false",
-      "authorId": "uuid references:User.id",
+      "published": "boolean",
+      "authorId": "uuid",
       "createdAt": "datetime"
     }
   }
@@ -54,11 +54,26 @@ export default function GeneratePage() {
     e.preventDefault()
     setSchemaParseError(null)
 
+    if (!projectName.trim()) {
+      alert('Please enter a project name')
+      return
+    }
+
+    if (!schema.trim()) {
+      alert('Please provide a schema definition')
+      return
+    }
+
+    setIsGenerating(true)
+
     try {
-      setIsGenerating(true)
-      
-      // Convert frontend schema to backend format
+      // Convert frontend schema to backend format and validate
       const backendSchema = convertToBackendSchema(schema)
+      
+      // Check if the converted schema has entities
+      if (!backendSchema.entities || backendSchema.entities.length === 0) {
+        throw new Error('Schema must contain at least one model/entity')
+      }
       
       // Create the project data
       const projectData = {
@@ -85,12 +100,12 @@ export default function GeneratePage() {
     } catch (error) {
       console.error("Error generating API:", error)
       
-      if ((error as Error).message.includes('schema')) {
+      if ((error as Error).message.includes('schema') || (error as Error).message.includes('model')) {
         setSchemaParseError((error as Error).message)
       } else {
         toast({
           title: "Error",
-          description: "Failed to generate API. Please try again.",
+          description: (error as Error).message || "Failed to generate API. Please try again.",
           variant: "destructive",
         })
       }
@@ -305,23 +320,7 @@ export default function GeneratePage() {
                       <span className="text-primary mr-2">4.</span> Start your API with{" "}
                       <code className="code-highlight">npm start</code>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">5.</span> Your API project has been saved in{" "}
-                      <Link href="/dashboard" className="text-primary hover:underline ml-1">
-                        your dashboard
-                      </Link>
-                    </li>
                   </ul>
-                </div>
-
-                <div className="flex justify-center">
-                  <Button
-                    variant="outline"
-                    onClick={() => router.push('/dashboard')}
-                    className="transition-all duration-300"
-                  >
-                    Go to Dashboard
-                  </Button>
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@
   "projects": [
     {
       "id": "781f59b1-c87a-4444-99f1-b5489d5e0b63",
+      "userId": "user_1",
       "name": "Todo API",
       "description": "A simple todo API with tasks and categories",
       "schema": {
@@ -116,6 +117,7 @@
     },
     {
       "id": "d3dd6f14-aac8-4e03-8a12-4d0f5b8580c6",
+      "userId": "user_2",
       "name": "jit",
       "description": "BASIC",
       "schema": {
@@ -245,6 +247,7 @@
     },
     {
       "id": "620f9c5e-faea-4023-a88c-c6e5d342622e",
+      "userId": "user_3",
       "name": "my-awesome-api",
       "description": "API for my-awesome-api",
       "schema": {

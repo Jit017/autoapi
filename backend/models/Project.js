@@ -12,21 +12,44 @@ if (!fs.existsSync(projectsFile)) {
 }
 
 class Project {
-  static async getAll() {
+  static async getAll(userId = null) {
     const data = await fs.readJSON(projectsFile);
+    console.log(`Project.getAll called with userId: ${userId || 'null'}`);
+    console.log(`Total projects: ${data.projects.length}`);
+    
+    // If userId is provided, filter projects by userId
+    if (userId) {
+      const filteredProjects = data.projects.filter(project => project.userId === userId);
+      console.log(`Filtered projects for user ${userId}: ${filteredProjects.length}`);
+      console.log('Projects with userIds:', data.projects.map(p => ({ id: p.id, userId: p.userId })));
+      return filteredProjects;
+    }
+    console.log('No userId provided, returning all projects');
     return data.projects;
   }
 
-  static async getById(id) {
+  static async getById(id, userId = null) {
     const data = await fs.readJSON(projectsFile);
-    return data.projects.find(project => project.id === id);
+    const project = data.projects.find(project => project.id === id);
+    
+    // If userId is provided, ensure the project belongs to the user
+    if (userId && project && project.userId !== userId) {
+      return null;
+    }
+    
+    return project;
   }
 
   static async create(projectData) {
     const data = await fs.readJSON(projectsFile);
+    console.log('Creating project with data:', {
+      name: projectData.name,
+      userId: projectData.userId || 'null'
+    });
     
     const newProject = {
       id: uuidv4(),
+      userId: projectData.userId || null, // Store the userId
       name: projectData.name,
       description: projectData.description || '',
       schema: projectData.schema,
@@ -47,11 +70,16 @@ class Project {
     return newProject;
   }
 
-  static async update(id, updates) {
+  static async update(id, updates, userId = null) {
     const data = await fs.readJSON(projectsFile);
     const index = data.projects.findIndex(project => project.id === id);
     
     if (index === -1) return null;
+    
+    // If userId is provided, ensure the project belongs to the user
+    if (userId && data.projects[index].userId !== userId) {
+      return null;
+    }
     
     data.projects[index] = {
       ...data.projects[index],
@@ -63,8 +91,17 @@ class Project {
     return data.projects[index];
   }
 
-  static async delete(id) {
+  static async delete(id, userId = null) {
     const data = await fs.readJSON(projectsFile);
+    
+    // If userId is provided, only delete if project belongs to user
+    if (userId) {
+      const project = data.projects.find(project => project.id === id);
+      if (!project || project.userId !== userId) {
+        return false;
+      }
+    }
+    
     const filteredProjects = data.projects.filter(project => project.id !== id);
     
     if (filteredProjects.length === data.projects.length) {
